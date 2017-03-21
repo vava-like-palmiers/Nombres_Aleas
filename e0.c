@@ -20,6 +20,13 @@ bool get(byte_t * tab, size_t size, size_t i){
 }
 
 
+/**
+ * xxxx
+ * and 0111 (masque inversé)
+ * = 0xxx
+ * or y000 (valeur placée)
+ * = yxxx
+ */
 void set(byte_t * tab, size_t size, size_t i, bool val){
     assert(i < size);
 	const size_t caseTab = i / 8;
