@@ -50,8 +50,16 @@ int main()
 	tab[0] = 0;
 	tab[1] = 1;
 
-	bool res = get(tab, 2, 8);
-	printf("res : %d\n", (int) res);
+	//test get
+	bool res = get(tab, 12, 8);
+	printf("get(8) : %d\n", (int) res);
+
+
+	//test set
+	set(tab, 12, 10, 1);
+	//res = get(tab, 12, 8);
+	//printf("res : %d\n", (int) res);
+	printf("tab[1] : %d\n", (int) tab[1]);
 
 
 	return 0;
