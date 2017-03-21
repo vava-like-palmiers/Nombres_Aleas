@@ -5,6 +5,8 @@
 #include "von_neumann.h"
 #include "mersenne_twister.h"
 
+#include "e0.h"
+
 #define ARRAY_MAX_SIZE 1000
 
 
@@ -42,6 +44,14 @@ int main()
 	printf("- Generation de nombres aleatoires -\n");
 	printf("Von Neumann : %u\n",output_VN);
 	printf("Mersenne Twister : %u\n",output_MT);
+	printf("res\n");
+
+	/*byte_t tab[2];
+	tab[0] = 0;
+	tab[1] = 1;
+
+	bool res = get(tab, 2, 8);*/
+
 
 
 	return 0;
