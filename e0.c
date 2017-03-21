@@ -12,7 +12,7 @@
 
 
 bool get(byte_t * tab, size_t size, size_t i){
-    assert(i < size);
+    assert(i >= 0 && i < size);
 	const size_t caseTab = i / 8;
 	const size_t decalage = i % 8;
 
@@ -28,7 +28,7 @@ bool get(byte_t * tab, size_t size, size_t i){
  * = yxxx
  */
 void set(byte_t * tab, size_t size, size_t i, bool val){
-    assert(i < size);
+    assert(i >= 0 && i < size);
 	const size_t caseTab = i / 8;
 	const size_t decalage = i % 8;
 	const byte_t masqueInverse = ~(1 << decalage);
