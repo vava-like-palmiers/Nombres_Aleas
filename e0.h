@@ -17,5 +17,9 @@ typedef unsigned char byte_t;
 
 bool get(byte_t * tab, size_t size, size_t i);
 void set(byte_t * tab, size_t size, size_t i, bool val);
+bool premierBit(bool bit1, bool bit2, bool bit3, bool bit4);
+void LFSR(size_t size, int bit1, int bit2, int bit3, int bit4);
+void tabToString(byte_t * tab, size_t size);
+void decalageLFSR(byte_t * tab, size_t size);
 
 #endif /* CODE_E0_H_ */

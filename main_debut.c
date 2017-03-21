@@ -48,7 +48,7 @@ int main()
 
 	byte_t tab[2];
 	tab[0] = 0;
-	tab[1] = 1;
+	tab[1] = 0;
 
 	//test get
 	bool res = get(tab, 12, 8);
@@ -56,11 +56,12 @@ int main()
 
 
 	//test set
-	set(tab, 12, 10, 1);
+	set(tab, 12, 8, 1);
 	//res = get(tab, 12, 8);
 	//printf("res : %d\n", (int) res);
 	printf("tab[1] : %d\n", (int) tab[1]);
 
+    LFSR(26, 25, 20, 12, 8);
 
 	return 0;
 }
