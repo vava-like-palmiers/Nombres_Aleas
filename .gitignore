@@ -1,1 +1,4 @@
-
+#on ignore les objets et les fichiers projet
+bin
+obj
+Nombres_Aleas.*

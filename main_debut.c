@@ -28,14 +28,14 @@ int main()
 	word16 output_VN; // sortie pour pour Von Neumann
 	word32 output_MT; // sortie pour Mersenne-Twister
 
-               
+
 	// initialisation des graines des generateurs
 
-	srand(rdtsc());  // rand du C 
+	srand(rdtsc());  // rand du C
 	seed = rand();
 	sgenrand(time(NULL)+(tmp), &mt); // Mersenne-Twister
-	
-	// sorties des generateurs	
+
+	// sorties des generateurs
 	output_VN = Von_Neumann(&x); // Von Neumann
 	output_MT = genrand(&mt); // Mersenne-Twister
 
@@ -44,14 +44,14 @@ int main()
 	printf("- Generation de nombres aleatoires -\n");
 	printf("Von Neumann : %u\n",output_VN);
 	printf("Mersenne Twister : %u\n",output_MT);
-	printf("res\n");
 
-	/*byte_t tab[2];
+
+	byte_t tab[2];
 	tab[0] = 0;
 	tab[1] = 1;
 
-	bool res = get(tab, 2, 8);*/
-
+	bool res = get(tab, 2, 8);
+	printf("res : %d\n", (int) res);
 
 
 	return 0;
