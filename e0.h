@@ -22,4 +22,18 @@ void LFSR(size_t size, int bit1, int bit2, int bit3, int bit4);
 void tabToString(byte_t * tab, size_t size);
 void decalageLFSR(byte_t * tab, size_t size);
 
+
+
+struct FSM {
+    byte_t LFSR1[25/8];
+    byte_t LFSR2[31/8];
+    byte_t LFSR3[33/8];
+    byte_t LFSR4[39/8];
+
+    size_t taille;
+};
+
+typedef struct FSM FSM;
+
+
 #endif /* CODE_E0_H_ */
