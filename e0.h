@@ -36,10 +36,10 @@ struct FSM {
 };
 typedef struct FSM FSM;
 
-const size_t TAILLE_1 = 25;
-const size_t TAILLE_2 = 31;
-const size_t TAILLE_3 = 33;
-const size_t TAILLE_4 = 39;
+extern const size_t TAILLE_1;
+extern const size_t TAILLE_2;
+extern const size_t TAILLE_3;
+extern const size_t TAILLE_4;
 
 
 

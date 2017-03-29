@@ -11,6 +11,14 @@
 #include <assert.h>
 
 
+
+const size_t TAILLE_1 = 25;
+const size_t TAILLE_2 = 31;
+const size_t TAILLE_3 = 33;
+const size_t TAILLE_4 = 39;
+
+
+
 bool get(byte_t * tab, size_t size, size_t i){
 
     //assert(i < size);
