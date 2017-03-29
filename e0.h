@@ -30,6 +30,8 @@ struct FSM {
     byte_t LFSR3[33/8];
     byte_t LFSR4[39/8];
 
+    byte_t ct;
+
     size_t taille;
 };
 
