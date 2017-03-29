@@ -39,6 +39,7 @@ void set(byte_t * tab, size_t size, size_t i, bool val){
 	tab[caseTab] = (tab[caseTab] & masqueInverse) | valeurPlacee;
 }
 
+
 void decalageLFSR(byte_t * tab, size_t size){
 	bool bit;
 	int i, lastval=0,firstval=0;
@@ -55,16 +56,14 @@ void decalageLFSR(byte_t * tab, size_t size){
 	}
 }
 
-bool premierBit(bool bit1, bool bit2, bool bit3, bool bit4){
-    return bit1 ^ bit2 ^ bit3 ^ bit4;
+
+bool premierBit(bool bit1, bool bit2, bool bit3, bool bit4, bool bit5){
+    return bit1 ^ bit2 ^ bit3 ^ bit4 ^ bit5;
 }
 
-void LFSR(size_t size, int bit1, int bit2, int bit3, int bit4){
-    byte_t tab[4];
-    /*tab[0] = 128;
-    tab[1] = 0;
-    tab[2] = 0;*/
-    tab[3] = 222;
+
+
+void LFSR(byte_t *tab, size_t size, int bit1, int bit2, int bit3, int bit4, int bit5){
     int i;
     bool bit;
     tabToString(tab, size);
@@ -72,12 +71,14 @@ void LFSR(size_t size, int bit1, int bit2, int bit3, int bit4){
         bit = premierBit(get(tab, size, bit1),
                          get(tab, size, bit2),
                          get(tab, size, bit3),
-                         get(tab, size, bit4));
+                         get(tab, size, bit4),
+                         get(tab, size, bit5));
         decalageLFSR(tab, size);
         set(tab, size, 0, bit);
         tabToString(tab, size);
     //}
 }
+
 
 void tabToString(byte_t * tab, size_t size){
     int i;
@@ -87,3 +88,19 @@ void tabToString(byte_t * tab, size_t size){
     }
     printf("}\n");
 }
+
+
+
+
+
+
+
+void avancerLFSR(FSM * fsm){
+    LFSR(fsm->LFSR1, TAILLE_1, 0, 7, 11, 19, 24);
+    LFSR(fsm->LFSR2, TAILLE_2, 0, 11, 15, 23, 30);
+    LFSR(fsm->LFSR3, TAILLE_3, 0, 3, 23, 27, 32);
+    LFSR(fsm->LFSR4, TAILLE_4, 0, 3, 27, 35, 38);
+}
+
+
+

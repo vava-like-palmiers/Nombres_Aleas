@@ -61,7 +61,7 @@ int main()
 	//printf("res : %d\n", (int) res);
 	printf("tab[1] : %d\n", (int) tab[1]);
 
-    LFSR(26, 25, 20, 12, 8);
+    //LFSR(26, 25, 20, 12, 8);
 
 	return 0;
 }
