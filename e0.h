@@ -46,5 +46,14 @@ extern const size_t TAILLE_4;
 void avancerLFSR(FSM * fsm);
 
 
+byte_t yt(bool x1, bool x2, bool x3, bool x4, bool ct);
+byte_t ct(bool c0, bool c1);
+bool c1t(bool s1t, bool c1tm1, bool c0tm2);
+bool c0t(bool s0t, bool c0tm1, bool c1tm2, bool c0tm2);
+byte_t s(byte_t ytm1);
+
+
+void majFSM(FSM * fsm);
+
 
 #endif /* CODE_E0_H_ */

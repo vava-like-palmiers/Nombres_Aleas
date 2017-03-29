@@ -111,4 +111,56 @@ void avancerLFSR(FSM * fsm){
 }
 
 
+byte_t yt(bool x1, bool x2, bool x3, bool x4, bool ct){
+    return (x1 + x2 + x3 + x4 + ct) % (1<<3);
+}
+
+byte_t ct(bool c0, bool c1){
+    return ((c1 << 1) + c0) % (1 << 2);
+}
+
+bool c1t(bool s1t, bool c1tm1, bool c0tm2){
+    return s1t ^ c1tm1 ^ c0tm2;
+}
+
+bool c0t(bool s0t, bool c0tm1, bool c1tm2, bool c0tm2){
+    return s0t ^ c0tm1 ^ c1tm2 ^ c0tm2;
+}
+
+byte_t s(byte_t ytm1){
+    return ytm1 >> 1;
+}
+
+
+
+void majFSM(FSM * fsm){
+    byte_t s = 0; //TODO
+
+    byte_t c0t_v = c0t(
+                     get(&s, 2, 0),
+                     get(&fsm->ct, 4, 2),
+                     get(&fsm->ct, 4, 1),
+                     get(&fsm->ct, 4, 0)
+                     );
+    byte_t c1t_v = c1t(
+                     get(&s, 2, 1),
+                     get(&fsm->ct, 4, 3),
+                     get(&fsm->ct, 4, 0)
+                     );
+
+    byte_t ctp1 = ct(
+                     c0t_v,
+                     c1t_v
+                     );
+
+    byte_t ytp1 = yt(
+              get(fsm->LFSR1, TAILLE_1, 22),
+              get(fsm->LFSR2, TAILLE_2, 22),
+              get(fsm->LFSR3, TAILLE_3, 30),
+              get(fsm->LFSR4, TAILLE_4, 36),
+              ctp1
+              );
+}
+
+
 
