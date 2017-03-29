@@ -25,10 +25,10 @@ void decalageLFSR(byte_t * tab, size_t size);
 
 
 struct FSM {
-    byte_t LFSR1[25/8];
-    byte_t LFSR2[31/8];
-    byte_t LFSR3[33/8];
-    byte_t LFSR4[39/8];
+    byte_t LFSR1[25/8 + 1];
+    byte_t LFSR2[31/8 + 1];
+    byte_t LFSR3[33/8 + 1];
+    byte_t LFSR4[39/8 + 1];
 
     byte_t ct;
 
